@@ -1,0 +1,71 @@
+    body {
+        font-family: "Times New Roman";
+        text-align: center;
+    }
+    
+    .about {
+        background: blue;
+        padding 8px;
+    }
+    
+    p {
+        color: black;
+    }
+    
+    p2 {
+        color: gold;
+    }
+    
+    p3 {
+        color: purple;
+    }
+    
+    p4 {
+        color: rgb(255, 251, 0);
+    }
+    
+    p5 {
+        color: brown;
+    }
+    
+    p2 .about {
+        background: rgb(65, 68, 225);
+        padding: 8px;
+    }
+    
+    .card1 {
+        color: rgb(92, 205, 186);
+    }
+    
+    .card2 {
+        color: rgb(172, 46, 8);
+    }
+    
+    .card3 {
+        color: rgb(162, 205, 92);
+    }
+    
+    .card4 {
+        color: rgb(205, 197, 92);
+    }
+    
+    .about {
+        color: white;
+    }
+    
+    img {
+        height: 200px;
+        width: 200px;
+    }
+    
+    .column {
+        float: left;
+        margin-right: 16px;
+        margin: 10px;
+        width: 23%;
+    }
+    
+    .card {
+        box-shadow: 0px 4px 8px 0px #b3b3b3f5;
+        padding: 0 16px 0 16px;
+    }
