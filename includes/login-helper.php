@@ -1,15 +1,16 @@
 <?php
 if(isset($_POST['login-submit'])){
+require "dbhandler.php";
 $uname = $_POST['uname-email'];
 $passw = $_POST['pwd'];
 if(empty($uname) || empty($passw)){
-    header("Location: ../login.php?error=EmptyField");
+    header("Location: ./login.php?error=EmptyField");
     exit();
 }
 $sql = "SELECT * FROM users WHERE uname=? OR email=?";
 $stmt = mysqli_stmt_init($conn);
-if(!mysqli_stmt_prepare($stmt, $$sql)){
-    header("Location: ../login.php?error=SQLIjection");
+if(!mysqli_stmt_prepare($stmt, $sql)){
+    header("Location: ./login.php?error=SQLIjection");
     exit();
 }
 else{
@@ -18,7 +19,7 @@ else{
     $result = mysqli_stmt_get_result($stmt);
     $data = mysqli_fetch_assoc($result);
     if(empty($data)){
-        header("Location: ../login.php?error=UserDNE");
+        header("Location: ./login.php?error=UserDNE");
     exit();
     }
     else{
@@ -28,16 +29,16 @@ else{
         $_SESSION['uid'] = $data['uid'];
         $_SESSION['fname'] = $data['fname'];
         $_SESSION['uname'] = $data['uname'];
-        echo "<h1>Sucess!</h1><p>$uname</p>";
+        echo "<h1>Sucess!</h1><p>.$uname</p>";
     }
     else{
-        header("Location: ../login.php?error=WrongPass");
+        header("Location: ./login.php?error=WrongPass");
     exit();
     }
     }
 }
 }
 else{
-    header("Location: ..login.php");
+    header("Location: ./login.php");
     exit();
 }
