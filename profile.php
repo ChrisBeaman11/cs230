@@ -14,7 +14,7 @@ require 'includes/dbhandler.php';
         if (e.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.querySelector('#prof-display').setAttribute('src', e.target.result);
+                document.querySelector("#prof-display").setAttribute('src', e.target.result);
             }
             reader.readAsDataUrl(e.files[0]);
         }
@@ -22,10 +22,10 @@ require 'includes/dbhandler.php';
     </script>
 
     <?php
-if(isset($_SESSIOn['udi'])){
+if(isset($_SESSION['uid'])){
 
     $prof_user = $_SESSION['uname'];
-$sqlpro ="SELECT * FROM profiles WHERE uname='$prof_user;";
+$sqlpro ="SELECT * FROM profiles WHERE uname='$prof_user';";
 $res = mysqli_query($conn, $sqlpro);
 $row = mysqli_fetch_array($res);
 $photo = $row['profpic'];
@@ -38,7 +38,7 @@ $photo = $row['profpic'];
                 <div class="form-group">
                     <img src="<?php echo $photo;?>" alt="profile pic" onclick="triggered();" id="prof-display">
 
-                    <label for="prof-image" id="uname-style"><?php echo $prof_user ?></label>
+                    <label for="prof-image" id="uname-style"><?php echo $prof_user; ?></label>
                     <input type= "file" name="prof-image" id="prof-image" onchange="preview(this)" class="form-control" style= "display: none;">
                 </div>
                 <div class="form-group">

@@ -26,10 +26,10 @@ if(isset($_SESSION['uid'])){
     ?>
     <div class="h-50 center-me text-center">
         <div class="my-auto">
-            <form action="includes/gallery-helper.php" method="POST" enctype='multipart/form-data'>
+            <form action="includes/gallery-helper.php" method="POST" enctype="multipart/form-data">
 
                 <div class="form group">
-                    <img src="top1.jpg" alt="profile-pic" onclick="triggered();" id="gallery-display">
+                    <img src="/images/top1.jpg" alt="profile-pic" onclick="triggered();" id="gallery-display">
 
                     <input type="text" name="title" class="form-control" placeholder="title">
                     <input type="file" name="gallery-image" id="gallery-image" onchange="preview(this)" class="form-control" style= "display: none;">
@@ -37,7 +37,7 @@ if(isset($_SESSION['uid'])){
                 </div>
                 <div class="form-group">
                     <textarea name="description" id="bio" cols="30" rows="10" placeholder="Description" style= "text-align: center;"></textarea>
-                        style="text-align: center">
+            
                 </div>
    
 <div class="form=group">

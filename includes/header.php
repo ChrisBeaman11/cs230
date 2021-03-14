@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -35,18 +39,21 @@
                     <li class="nav-item">
                         <?php if(isset($_SESSION['uid'])){
                     echo '<li class ="nav-item">
-                <a class="nav-link" href="includes/logout.php">Logout</a>
+                <a class="nav-link" href="../logout.php">Logout</a>
                 </li>
                 <li class ="nav-item">
-                <a class="nav-link" href="gallery.php">Gallery</a>
+                <a class="nav-link" href="../gallery.php">Gallery</a>
                 </li>
                 <li class ="nav-item">
-                <a class="nav-link" href="includes/profile.php">Profile</a>
+                <a class="nav-link" href="../profile.php">Profile</a>
+                </li>
+                <li class ="nav-item">
+                <a class="nav-link" href="../admin.php">Admin</a>
                 </li>';
             }
             else{
                 echo '<li class="nav-item">
-                <a class="nav-link" href="login.php>Login</a>
+                <a class="nav-link" href="../login.php">Login</a>
                 </li>';
             }
             ?>

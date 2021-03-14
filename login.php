@@ -1,8 +1,8 @@
 <?php
-require '../includes/header.php';
+require 'includes/header.php';
 ?>
 <main>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="css/login.css">
     <div class="bg-cover">
         <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -13,13 +13,13 @@ require '../includes/header.php';
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block mx-auto" src="/images/top1.jpg" alt="First slide">
+                        <img class="d-block mx-auto" src="images/top1.jpg" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block mx-auto" src="/images/top2.jpg" alt="Second slide">
+                        <img class="d-block mx-auto" src="images/top2.jpg" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block mx-auto" src="/images/top3.jpeg" alt="Third slide">
+                        <img class="d-block mx-auto" src="images/top3.jpeg" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -34,7 +34,7 @@ require '../includes/header.php';
         </div>
         <div class="h-40 center-me">
             <div class="my-auto">
-                <form class="form-signin" action="login-helper.php" method="post">
+                <form class="form-signin" action="includes/login-helper.php" method="post">
 
                     <h1 class="h3 mb-3 fw-normal">Login</h1>
                     <p clas="hint-text"> Login pal</p>
