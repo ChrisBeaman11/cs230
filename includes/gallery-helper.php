@@ -30,7 +30,7 @@ if(isset($_POST['gallery-submit'])){
         header("location: ../admin.php?error=InvalidType");
         exit();
     }
-    if($file_size .4*MB){
+    if($file_size > 4*MB){
         header("Location ..admin.php?error=FileSizeExceeded");
         exit();
     }
@@ -42,28 +42,29 @@ if(isset($_POST['gallery-submit'])){
 
         $sql = "INSERT INTO gallery (title, descript, picpath) VALUES (?,?,?)";
         $stmt =mysqli_stmt__init($conn);
-
+    }
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../admin.php?error=SQLIjection");
             exit();
-        }else{
+        }
+        else{
 
             mysqli_stmt_bind_param($stmt, "sss", $title, $descript, $destination);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
             move_upload_file($file_tmp_name, $destination);
-            header("Location: ../admin.php?success=GalleryUpload");
-            exit();
+            move_upload_file($file_tmp_name, $destination);
+        header("Location: ../admin.php?success=GalleryUploadSuccess");
+        exit();
         }
 
-        move_upload_file($file_tmp_name, $destination);
-        header("Location: ../admin.php?success=UploadWin");
-        exit();
+       
 
     }
 
 
-}else{
-    header("Location ../admin.php");
-    exit();
-}
+    else{
+        header("Location ../admin.php");
+        exit();
+    }
+    
