@@ -3,7 +3,7 @@ require 'includes/header.php';
 ?>
 
 <main>
-    <link rel="stylesheet" href="css.gallery.css">
+    <link rel="stylesheet" href="css/gallery.css">
 
     <h1>Gallery</h1>
     <div class="gallery-container">
