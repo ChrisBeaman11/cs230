@@ -36,7 +36,7 @@ if(isset($_SESSION['uid'])){
 
                 </div>
                 <div class="form-group">
-                    <textarea name="description" id="bio" cols="30" rows="10" placeholder="Description" style= "text-align: center;"></textarea>
+                    <textarea name="descript" id="bio" cols="30" rows="10" placeholder="Description" style= "text-align: center;"></textarea>
             
                 </div>
    

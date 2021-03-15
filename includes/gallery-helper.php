@@ -14,8 +14,8 @@ if(isset($_POST['gallery-submit'])){
     $file_error = $file['error'];
     $file_size = $file['tmp_name'];
 
-    $title =$_POST['title'];
-    $descript =$_POST['descript'];
+    $title = $_POST['title'];
+    $descript = $_POST['descript'];
 
     $ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
 
@@ -41,7 +41,7 @@ if(isset($_POST['gallery-submit'])){
         $destination = '../gallery/'.$new_name;
 
         $sql = "INSERT INTO gallery (title, descript, picpath) VALUES (?,?,?)";
-        $stmt =mysqli_stmt__init($conn);
+        $stmt = mysqli_stmt_init($conn);
     }
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../admin.php?error=SQLIjection");
@@ -52,8 +52,7 @@ if(isset($_POST['gallery-submit'])){
             mysqli_stmt_bind_param($stmt, "sss", $title, $descript, $destination);
             mysqli_stmt_execute($stmt);
             mysqli_stmt_store_result($stmt);
-            move_upload_file($file_tmp_name, $destination);
-            move_upload_file($file_tmp_name, $destination);
+            move_uploaded_file($file_tmp_name, $destination);
         header("Location: ../admin.php?success=GalleryUploadSuccess");
         exit();
         }
